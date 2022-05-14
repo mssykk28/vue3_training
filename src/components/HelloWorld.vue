@@ -27,6 +27,8 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <button v-on:click="onClick">クリック</button>
+    <p>{{ message }}</p>
   </div>
 </template>
 
@@ -35,6 +37,17 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      message: ''
+    }
+  },
+  methods: {
+    //  クリック時に現在日時を取得
+    onClick() {
+      this.message = new Date().toLocaleString();
+    }
   }
 }
 </script>
