@@ -1,24 +1,24 @@
 # vue3_training
 
-## Project setup
+## プロジェクトセットアップ
 ```
-npm install
+npmインストール
 ```
 
-### Compiles and hot-reloads for development
+### 開発のためのコンパイルとホットリロード
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 本番用にコンパイルとミニライズを行う
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### ファイルのリントと修正
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 設定のカスタマイズ
+Configuration Reference](https://cli.vuejs.org/config/)を参照してください。
