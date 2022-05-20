@@ -30,6 +30,10 @@
     <button @click="onClick">クリック</button>
     <p>{{ message }}</p>
   </div>
+  <div id="app">
+    <img v-bind:src="path" alt="画像"
+    v-on:mouseenter="onmouseenter" v-on:mouseleave="onmouseleave" />
+  </div>
 </template>
 
 <script>
@@ -40,13 +44,22 @@ export default {
   },
   data() {
     return {
-      message: ''
+      message: '',
+      path: 'https://www.web-deli.com/image/linkbanner_l.gif'
     }
   },
   methods: {
     //  クリック時に現在日時を取得
     onClick() {
       this.message = new Date().toLocaleString();
+    },
+    // 画像にマウスポインターが乗った時
+    onmouseenter() {
+      this.path = 'https://www.web-deli.com/image/home_chara.gif';
+    },
+    // 画像からマウスポインターが外れた時
+    onmouseleave() {
+      this.path = 'https://www.web-deli.com/image/linkbanner_l.gif';
     }
   }
 }
