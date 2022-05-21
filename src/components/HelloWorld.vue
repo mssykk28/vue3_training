@@ -32,7 +32,7 @@
   </div>
   <div id="app">
     <img v-bind:src="path" alt="画像"
-    v-on:mouseenter="onmouseenter" v-on:mouseleave="onmouseleave" />
+    @mouseenter="onmouseenter" @mouseleave="onmouseleave" />
   </div>
 </template>
 
