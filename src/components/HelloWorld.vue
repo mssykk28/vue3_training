@@ -16,6 +16,19 @@
     </form>
     <p>こんにちは、{{ myName }}さん</p>
   </div>
+  <div>
+    <form>
+      <label for="dog">いぬ</label>
+      <input type="radio" id="dog" value="いぬ" v-model="pet" />
+      <br>
+      <label for="cat">ねこ</label>
+      <input type="radio" id="cat" value="ねこ" v-model="pet" />
+      <br>
+      <label for="other">その他</label>
+      <input type="radio" id="other" value="その他" v-model="pet" />
+    </form>
+    <p>私のペットは{{ pet }}です</p>
+    </div>
 </template>
 
 <script>
@@ -29,6 +42,7 @@ export default {
       message: '',
       path: 'https://www.web-deli.com/image/linkbanner_l.gif',
       myName: '匿名',
+      pet: 'いぬ',
     }
   },
   methods: {
