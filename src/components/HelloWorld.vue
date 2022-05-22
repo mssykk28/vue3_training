@@ -29,6 +29,13 @@
     </form>
     <p>私のペットは{{ pet }}です</p>
     </div>
+  <div>
+    <form>
+      <label for="agree" >同意する：</label>
+      <input type="checkbox" id="agree" v-model="agree" />
+    </form>
+    <p>回答：{{ agree }}</p>
+  </div>
 </template>
 
 <script>
@@ -43,6 +50,7 @@ export default {
       path: 'https://www.web-deli.com/image/linkbanner_l.gif',
       myName: '匿名',
       pet: 'いぬ',
+      agree: true
     }
   },
   methods: {
