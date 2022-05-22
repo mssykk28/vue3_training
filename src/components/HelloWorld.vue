@@ -30,9 +30,16 @@
     <button @click="onClick">クリック</button>
     <p>{{ message }}</p>
   </div>
-  <div id="app">
+  <div>
     <img v-bind:src="path" alt="画像"
     @mouseenter="onmouseenter" @mouseleave="onmouseleave" />
+  </div>
+  <div>
+    <form>
+      <label for="name">名前</label>
+      <input type="text" id="name" v-model="myName" />
+    </form>
+    <p>こんにちは、{{ myName }}さん</p>
   </div>
 </template>
 
@@ -45,7 +52,8 @@ export default {
   data() {
     return {
       message: '',
-      path: 'https://www.web-deli.com/image/linkbanner_l.gif'
+      path: 'https://www.web-deli.com/image/linkbanner_l.gif',
+      myName: '匿名',
     }
   },
   methods: {
