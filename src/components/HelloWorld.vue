@@ -32,7 +32,7 @@
   <div>
     <form>
       <label for="agree" >同意する：</label>
-      <input type="checkbox" id="agree" v-model="agree" />
+      <input type="checkbox" id="agree" v-model="agree" true-value="yes" false-value="no"/>
     </form>
     <p>回答：{{ agree }}</p>
   </div>
