@@ -36,6 +36,21 @@
     </form>
     <p>回答：{{ agree }}</p>
   </div>
+
+  <div>
+    <form>
+      <div>お使いのOSは？</div>
+      <input type="checkbox" id="windows" value="windows" v-model="os" />
+      <label for="windows">Windows</label>
+      <br>
+      <input type="checkbox" id="mac" value="mac" v-model="os" />
+      <label for="mac">Mac</label>
+      <br>
+      <input type="checkbox" id="linux" value="linux" v-model="os" />
+      <label for="linux">Linux</label>
+    </form>
+    <p>私のOSは{{ os }}です</p>
+  </div>
 </template>
 
 <script>
@@ -50,7 +65,8 @@ export default {
       path: 'https://www.web-deli.com/image/linkbanner_l.gif',
       myName: '匿名',
       pet: 'いぬ',
-      agree: true
+      agree: true,
+      os: ['windows', 'mac', 'linux']
     }
   },
   methods: {
