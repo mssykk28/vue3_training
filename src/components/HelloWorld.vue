@@ -51,6 +51,18 @@
     </form>
     <p>私のOSは{{ os }}です</p>
   </div>
+  <div>
+    <form>
+      <div>お使いのブラウザは？</div>
+      <select v-model="browser">
+        <option>Chrome</option>
+        <option>Firefox</option>
+        <option>Safari</option>
+        <option>Opera</option>
+      </select>
+    </form>
+    <p>私のブラウザは{{ browser }}です</p>
+  </div>
 </template>
 
 <script>
@@ -66,7 +78,8 @@ export default {
       myName: '匿名',
       pet: 'いぬ',
       agree: true,
-      os: ['windows', 'mac', 'linux']
+      os: ['windows', 'mac', 'linux'],
+      browser: ""
     }
   },
   methods: {
