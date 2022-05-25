@@ -63,6 +63,15 @@
     </form>
     <p>私のブラウザは{{ browser }}です</p>
   </div>
+  <div>
+    <form>
+      <label for="show">表示/非表示</label>
+      <input type="checkbox" id="show" v-model="show" />
+    </form>
+    <div v-if="show">
+      <p>表示します</p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -79,7 +88,8 @@ export default {
       pet: 'いぬ',
       agree: true,
       os: ['windows', 'mac', 'linux'],
-      browser: ""
+      browser: "",
+      show: true
     }
   },
   methods: {
