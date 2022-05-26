@@ -74,6 +74,72 @@
     <div v-else>
       <p>非表示にします</p>
     </div>
+
+    <div>
+      <form>
+        <label for="holiday">祝日：</label><br>
+        <select id="holiday" v-model="holiday">
+          <option value="">祝日を選択してください</option>
+          <option value="1">元日</option>
+          <option value="2">成人の日</option>
+          <option value="3">建国記念の日</option>
+          <option value="4">春分の日</option>
+          <option value="5">憲法記念日</option>
+          <option value="6">みどりの日</option>
+          <option value="7">こどもの日</option>
+          <option value="8">海の日</option>
+          <option value="9">敬老の日</option>
+          <option value="10">秋分の日</option>
+          <option value="11">体育の日</option>
+          <option value="12">文化の日</option>
+          <option value="13">勤労感謝の日</option>
+          <option value="14">天皇誕生日</option>
+        </select>
+      </form>
+      <div v-if="holiday==='1'">
+        <p>年始</p>
+    </div>
+      <div v-else-if="holiday==='2'">
+      <p>成人の日</p>
+    </div>
+      <div v-else-if="holiday==='3'">
+      <p>建国記念の日</p>
+    </div>
+      <div v-else-if="holiday==='4'">
+      <p>春分の日</p>
+    </div>
+      <div v-else-if="holiday==='5'">
+      <p>憲法記念日</p>
+    </div>
+      <div v-else-if="holiday==='6'">
+      <p>みどりの日</p>
+    </div>
+      <div v-else-if="holiday==='7'">
+      <p>こどもの日</p>
+    </div>
+      <div v-else-if="holiday==='8'">
+      <p>海の日</p>
+    </div>
+      <div v-else-if="holiday==='9'">
+      <p>敬老の日</p>
+    </div>
+      <div v-else-if="holiday==='10'">
+      <p>秋分の日</p>
+    </div>
+      <div v-else-if="holiday==='11'">
+      <p>体育の日</p>
+    </div>
+      <div v-else-if="holiday==='12'">
+      <p>文化の日</p>
+    </div>
+      <div v-else-if="holiday==='13'">
+      <p>勤労感謝の日</p>
+    </div>
+      <div v-else-if="holiday==='14'">
+      <p>天皇誕生日</p>
+    </div>
+      <div v-else>何も選択されていません。</div>
+  </div>
   </div>
 
 </template>
@@ -93,7 +159,8 @@ export default {
       agree: true,
       os: ['windows', 'mac', 'linux'],
       browser: "",
-      show: true
+      show: true,
+      holiday: ""
     }
   },
   methods: {
