@@ -71,7 +71,11 @@
     <div v-if="show">
       <p>表示します</p>
     </div>
+    <div v-else>
+      <p>非表示にします</p>
+    </div>
   </div>
+
 </template>
 
 <script>
