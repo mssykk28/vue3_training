@@ -140,6 +140,18 @@
     </div>
       <div v-else>何も選択されていません。</div>
   </div>
+
+    <div>
+      <table>
+        <th>ISBN</th><th>書籍名</th><th>価格</th>
+        <tr v-for="book in books" :key="book.index">
+          <td>{{ book.isbn }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.price }}</td>
+        </tr>
+      </table>
+    </div>
+
   </div>
 
 </template>
@@ -160,7 +172,12 @@ export default {
       os: ['windows', 'mac', 'linux'],
       browser: "",
       show: true,
-      holiday: ""
+      holiday: "",
+      books:[
+        {isbn: '978-4-7741-8411-1', title: '改訂新版Vue本格入門〜Vue3対応〜', price: 2980},
+        {isbn: '978-4-7980-4853-6', title: 'はじめてのVue開発', price: 3200},
+        {isbn: '978-4-7981-3547-2', title: 'はじめての開発', price: 3480}
+      ]
     }
   },
   methods: {
