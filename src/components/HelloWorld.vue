@@ -162,6 +162,14 @@
       </ul>
     </div>
 
+    <div>
+      <ul>
+        <li v-for="[key,value] in map" :key="key">
+          {{ key }}:{{ value }}
+        </li>
+      </ul>
+    </div>
+
   </div>
 
 </template>
@@ -192,7 +200,12 @@ export default {
         isbn: '978-4-7741-8411-1',
         title: '改訂新版Vue本格入門〜Vue3対応〜',
         price: 2980
-      }
+      },
+      map : new Map([
+        ['PHP', 'value1'],
+        ['Python', 'value2'],
+        ['Java', 'value3']
+      ])
     }
   },
   methods: {
