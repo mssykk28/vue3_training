@@ -7,31 +7,31 @@
   </div>
   <div>
     <img v-bind:src="path" alt="画像"
-    @mouseenter="onmouseenter" @mouseleave="onmouseleave" />
+         @mouseenter="onmouseenter" @mouseleave="onmouseleave"/>
   </div>
   <div>
     <form>
       <label for="name">名前</label>
-      <input type="text" id="name" v-model="myName" />
+      <input type="text" id="name" v-model="myName"/>
     </form>
     <p>こんにちは、{{ myName }}さん</p>
   </div>
   <div>
     <form>
       <label for="dog">いぬ</label>
-      <input type="radio" id="dog" value="いぬ" v-model="pet" />
+      <input type="radio" id="dog" value="いぬ" v-model="pet"/>
       <br>
       <label for="cat">ねこ</label>
-      <input type="radio" id="cat" value="ねこ" v-model="pet" />
+      <input type="radio" id="cat" value="ねこ" v-model="pet"/>
       <br>
       <label for="other">その他</label>
-      <input type="radio" id="other" value="その他" v-model="pet" />
+      <input type="radio" id="other" value="その他" v-model="pet"/>
     </form>
     <p>私のペットは{{ pet }}です</p>
-    </div>
+  </div>
   <div>
     <form>
-      <label for="agree" >同意する：</label>
+      <label for="agree">同意する：</label>
       <input type="checkbox" id="agree" v-model="agree" true-value="yes" false-value="no"/>
     </form>
     <p>回答：{{ agree }}</p>
@@ -40,13 +40,13 @@
   <div>
     <form>
       <div>お使いのOSは？</div>
-      <input type="checkbox" id="windows" value="windows" v-model="os" />
+      <input type="checkbox" id="windows" value="windows" v-model="os"/>
       <label for="windows">Windows</label>
       <br>
-      <input type="checkbox" id="mac" value="mac" v-model="os" />
+      <input type="checkbox" id="mac" value="mac" v-model="os"/>
       <label for="mac">Mac</label>
       <br>
-      <input type="checkbox" id="linux" value="linux" v-model="os" />
+      <input type="checkbox" id="linux" value="linux" v-model="os"/>
       <label for="linux">Linux</label>
     </form>
     <p>私のOSは{{ os }}です</p>
@@ -66,7 +66,7 @@
   <div>
     <form>
       <label for="show">表示/非表示</label>
-      <input type="checkbox" id="show" v-model="show" />
+      <input type="checkbox" id="show" v-model="show"/>
     </form>
     <div v-if="show">
       <p>表示します</p>
@@ -98,52 +98,55 @@
       </form>
       <div v-if="holiday==='1'">
         <p>年始</p>
-    </div>
+      </div>
       <div v-else-if="holiday==='2'">
-      <p>成人の日</p>
-    </div>
+        <p>成人の日</p>
+      </div>
       <div v-else-if="holiday==='3'">
-      <p>建国記念の日</p>
-    </div>
+        <p>建国記念の日</p>
+      </div>
       <div v-else-if="holiday==='4'">
-      <p>春分の日</p>
-    </div>
+        <p>春分の日</p>
+      </div>
       <div v-else-if="holiday==='5'">
-      <p>憲法記念日</p>
-    </div>
+        <p>憲法記念日</p>
+      </div>
       <div v-else-if="holiday==='6'">
-      <p>みどりの日</p>
-    </div>
+        <p>みどりの日</p>
+      </div>
       <div v-else-if="holiday==='7'">
-      <p>こどもの日</p>
-    </div>
+        <p>こどもの日</p>
+      </div>
       <div v-else-if="holiday==='8'">
-      <p>海の日</p>
-    </div>
+        <p>海の日</p>
+      </div>
       <div v-else-if="holiday==='9'">
-      <p>敬老の日</p>
-    </div>
+        <p>敬老の日</p>
+      </div>
       <div v-else-if="holiday==='10'">
-      <p>秋分の日</p>
-    </div>
+        <p>秋分の日</p>
+      </div>
       <div v-else-if="holiday==='11'">
-      <p>体育の日</p>
-    </div>
+        <p>体育の日</p>
+      </div>
       <div v-else-if="holiday==='12'">
-      <p>文化の日</p>
-    </div>
+        <p>文化の日</p>
+      </div>
       <div v-else-if="holiday==='13'">
-      <p>勤労感謝の日</p>
-    </div>
+        <p>勤労感謝の日</p>
+      </div>
       <div v-else-if="holiday==='14'">
-      <p>天皇誕生日</p>
-    </div>
+        <p>天皇誕生日</p>
+      </div>
       <div v-else>何も選択されていません。</div>
-  </div>
+    </div>
 
     <div>
       <table>
-        <th>No</th><th>ISBN</th><th>書籍名</th><th>価格</th>
+        <th>No</th>
+        <th>ISBN</th>
+        <th>書籍名</th>
+        <th>価格</th>
         <tr v-for="(book,i) in books" :key="book.index">
           <td>{{ i + 1 }}</td>
           <td>{{ book.isbn }}</td>
@@ -151,6 +154,12 @@
           <td>{{ book.price }}</td>
         </tr>
       </table>
+    </div>
+
+    <div>
+      <ul v-for="(value,key) in book" :key="key">
+        <li>{{ key }}: {{ value }}</li>
+      </ul>
     </div>
 
   </div>
@@ -174,11 +183,16 @@ export default {
       browser: "",
       show: true,
       holiday: "",
-      books:[
+      books: [
         {isbn: '978-4-7741-8411-1', title: '改訂新版Vue本格入門〜Vue3対応〜', price: 2980},
         {isbn: '978-4-7980-4853-6', title: 'はじめてのVue開発', price: 3200},
         {isbn: '978-4-7981-3547-2', title: 'はじめての開発', price: 3480}
-      ]
+      ],
+      book: {
+        isbn: '978-4-7741-8411-1',
+        title: '改訂新版Vue本格入門〜Vue3対応〜',
+        price: 2980
+      }
     }
   },
   methods: {
@@ -203,14 +217,17 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
 }
