@@ -187,7 +187,22 @@
     </div>
 
     <div>
-       <span v-for="i in 5" :key="i">{{ i * 2 }}</span>
+      <span v-for="i in 5" :key="i">{{ i * 2 }}</span>
+    </div>
+
+    <div>
+      <table>
+        <th>No</th>
+        <th>ISBN</th>
+        <th>書籍名</th>
+        <th>価格</th>
+        <tr v-for="(book,i) in expensiveBooks" :key="book.index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ book.isbn }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.price }}</td>
+        </tr>
+      </table>
     </div>
 
 
@@ -222,7 +237,7 @@ export default {
         title: '改訂新版Vue本格入門〜Vue3対応〜',
         price: 2980
       },
-      map : new Map([
+      map: new Map([
         ['PHP', 'value1'],
         ['Python', 'value2'],
         ['Java', 'value3']
@@ -241,7 +256,12 @@ export default {
     // 画像からマウスポインターが外れた時
     onmouseleave() {
       this.path = 'https://www.web-deli.com/image/linkbanner_l.gif';
-    }
+    },
+  },
+  computed: {
+    expensiveBooks() {
+      return this.books.filter(book => book.price >= 3000);
+    },
   }
 }
 </script>
