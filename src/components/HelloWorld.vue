@@ -205,6 +205,23 @@
       </table>
     </div>
 
+    <div>
+      <table>
+        <th>No</th>
+        <th>ISBN</th>
+        <th>書籍名</th>
+        <th>価格</th>
+        <tr v-for="(book,i) in books" :key="book.index">
+          <template v-if="book.price > 3000">
+            <td>{{ i + 1 }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.price }}</td>
+          </template>
+        </tr>
+      </table>
+    </div>
+
 
   </div>
 
