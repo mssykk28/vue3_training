@@ -170,6 +170,22 @@
       </ul>
     </div>
 
+    <div>
+      <ul>
+        <li v-for="[key] in map" :key="key">
+          {{ key }}
+        </li>
+      </ul>
+    </div>
+
+        <div>
+      <ul>
+        <li v-for="[, value] in map" :key="value">
+          {{ value }}
+        </li>
+      </ul>
+    </div>
+
   </div>
 
 </template>
