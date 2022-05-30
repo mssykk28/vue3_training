@@ -178,13 +178,18 @@
       </ul>
     </div>
 
-        <div>
+    <div>
       <ul>
         <li v-for="[, value] in map" :key="value">
           {{ value }}
         </li>
       </ul>
     </div>
+
+    <div>
+       <span v-for="i in 5" :key="i">{{ i * 2 }}</span>
+    </div>
+
 
   </div>
 
