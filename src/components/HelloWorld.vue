@@ -222,6 +222,15 @@
       </table>
     </div>
 
+    <div>
+      <form>
+        <input type="button" value="変更" @click="change">
+      </form>
+    </div>
+    <ul>
+      <li v-for="item in list" :key="item">{{ item }}</li>
+    </ul>
+
 
   </div>
 
@@ -258,7 +267,8 @@ export default {
         ['PHP', 'value1'],
         ['Python', 'value2'],
         ['Java', 'value3']
-      ])
+      ]),
+      list: ["赤パジャマ", "白パジャマ", "青パジャマ"],
     }
   },
   methods: {
@@ -273,6 +283,9 @@ export default {
     // 画像からマウスポインターが外れた時
     onmouseleave() {
       this.path = 'https://www.web-deli.com/image/linkbanner_l.gif';
+    },
+    change() {
+      this.list[1] = '茶パジャマ';
     },
   },
   computed: {
