@@ -286,6 +286,8 @@ export default {
     },
     change() {
       this.list[1] = '茶パジャマ';
+      // 配列の先頭要素を削除
+      this.list.shift();
     },
   },
   computed: {
