@@ -231,6 +231,12 @@
       <li v-for="item in list" :key="item">{{ item }}</li>
     </ul>
 
+    <div>
+      <form>
+        <label for="memo">メモ：</label>
+        <input type="text" id="memo" v-bind="attrs">
+      </form>
+    </div>
 
   </div>
 
@@ -269,6 +275,11 @@ export default {
         ['Java', 'value3']
       ]),
       list: ["赤パジャマ", "白パジャマ", "青パジャマ"],
+      attrs: {
+        size: '20',
+        maxlength: '14',
+        required: true,
+      }
     }
   },
   methods: {
