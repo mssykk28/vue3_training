@@ -238,6 +238,15 @@
       </form>
     </div>
 
+    <div>
+      <select v-model="attr">
+        <option value="height">高さ</option>
+        <option value="width">幅</option>
+      </select>:
+      <input type="text" v-model="size"><br>
+      <img src="https://wings.msn.to/image/wings.jpg" v-bind:[attr]="size" alt="フリー画像"/>
+    </div>
+
   </div>
 
 </template>
@@ -279,7 +288,9 @@ export default {
         size: '20',
         maxlength: '14',
         required: true,
-      }
+      },
+      attr: "height",
+      size: "100",
     }
   },
   methods: {
