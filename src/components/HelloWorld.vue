@@ -247,6 +247,13 @@
       <img src="https://wings.msn.to/image/wings.jpg" v-bind:[attr]="size" alt="フリー画像"/>
     </div>
 
+    <!--  htmlの埋め込み  -->
+    <div>
+      <p>{{ message_html }}</p>
+      <!-- 以下のようにするとhtmlタグの中身表示     -->
+      <p v-html="message_html"></p>
+    </div>
+
   </div>
 
 </template>
@@ -291,6 +298,8 @@ export default {
       },
       attr: "height",
       size: "100",
+      message_html: `<p>こんにちは</p>'
+      <img src="https://www.web-deli.com/image/linkbanner_l.gif" alt="ロゴ"/>`
     }
   },
   methods: {
