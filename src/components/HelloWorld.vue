@@ -254,6 +254,16 @@
       <p v-html="message_html"></p>
     </div>
 
+    <div>
+      <form>
+        <label for="name">氏名：</label>
+        <input type="text" id="name" v-model="name">
+      </form>
+      <!-- 初回だけしか反映されない -->
+      <div v-once>初めまして、{{ name }} さん。</div>
+      <div>初めまして、{{ name }} さん。</div>
+    </div>
+
   </div>
 
 </template>
@@ -299,7 +309,8 @@ export default {
       attr: "height",
       size: "100",
       message_html: `<p>こんにちは</p>'
-      <img src="https://www.web-deli.com/image/linkbanner_l.gif" alt="ロゴ"/>`
+      <img src="https://www.web-deli.com/image/linkbanner_l.gif" alt="ロゴ"/>`,
+      name: '匿名',
     }
   },
   methods: {
