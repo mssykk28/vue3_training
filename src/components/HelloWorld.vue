@@ -264,6 +264,12 @@
       <div>初めまして、{{ name }} さん。</div>
     </div>
 
+    <div>
+      <div v-bind:style="{backgroundColor:'Aqua',fontsize:'1.5em'}">
+        みなさん、こんにちは！
+      </div>
+    </div>
+
   </div>
 
 </template>
