@@ -268,6 +268,9 @@
       <div v-bind:style="{backgroundColor:'Aqua',fontSize:'1.5em'}">
         みなさん、こんにちは！
       </div>
+      <div v-bind:style="{'background-color':'Red','font-size':'1.5em'}">
+        みなさん、こんにちは！その２
+      </div>
     </div>
 
   </div>
