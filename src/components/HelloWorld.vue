@@ -273,6 +273,12 @@
       </div>
     </div>
 
+    <div>
+      <div v-bind:style="[color, size]">
+        みなさん、こんにちは！（複数スタイル）
+      </div>
+    </div>
+
   </div>
 
 </template>
@@ -320,6 +326,10 @@ export default {
       message_html: `<p>こんにちは</p>'
       <img src="https://www.web-deli.com/image/linkbanner_l.gif" alt="ロゴ"/>`,
       name: '匿名',
+      color: {
+        backgroundColor: 'Pink',
+        fontSize: '1.5em'
+      }
     }
   },
   methods: {
