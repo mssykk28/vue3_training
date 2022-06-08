@@ -279,6 +279,14 @@
       </div>
     </div>
 
+    <div class="small" v-bind:class="{cl, frame:isChange}">
+      みなさん、こんにちは！その3
+    </div>
+
+    <div class="small cl frame">
+      みなさん、こんにちは！その4
+    </div>
+
   </div>
 
 </template>
@@ -329,7 +337,9 @@ export default {
       color: {
         backgroundColor: 'Pink',
         fontSize: '1.5em'
-      }
+      },
+      cl: true,
+      isChange: false
     }
   },
   methods: {
