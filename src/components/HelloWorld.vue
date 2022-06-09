@@ -292,6 +292,14 @@
       この領域では、コンテキストメニューがs表示されません。
     </div>
 
+    <div>
+      <form method="POST" v-on:submit="onsubmit">
+        <label for="email">メールアドレス：</label>
+        <input type="email" id="email" name="email"/>
+        <input type="submit" value="送信"/>
+      </form>
+    </div>
+
   </div>
 
 </template>
@@ -364,6 +372,12 @@ export default {
       this.list[1] = '茶パジャマ';
       // 配列の先頭要素を削除
       this.list.shift();
+    },
+    onsubmit(e) {
+      if (!confirm('送信しますか？')) {
+        e.preventDefault();
+        return;
+      }
     },
   },
   computed: {
