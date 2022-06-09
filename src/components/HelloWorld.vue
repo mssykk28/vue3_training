@@ -287,6 +287,11 @@
       みなさん、こんにちは！その4
     </div>
 
+    <!-- preventは、イベント規定の動作をキャンセル  -->
+    <div id="main" v-on:contextmenu.prevent>
+      この領域では、コンテキストメニューがs表示されません。
+    </div>
+
   </div>
 
 </template>
