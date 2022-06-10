@@ -299,6 +299,10 @@
         <input type="submit" value="送信"/>
       </form>
     </div>
+    <div>
+      <input type="button" value="結果表示" v-on:click.once="onClickResult"/>
+      <p>今日の運勢は{{ result }}点です。</p>
+    </div>
 
   </div>
 
@@ -352,7 +356,8 @@ export default {
         fontSize: '1.5em'
       },
       cl: true,
-      isChange: false
+      isChange: false,
+      result: '-'
     }
   },
   methods: {
@@ -379,6 +384,9 @@ export default {
         return;
       }
     },
+    onClickResult() {
+      this.result = Math.floor(Math.random() * 100) + 1;
+    }
   },
   computed: {
     expensiveBooks() {
