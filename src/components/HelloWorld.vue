@@ -304,6 +304,13 @@
       <p>今日の運勢は{{ result }}点です。</p>
     </div>
 
+    <div>
+      <form>
+        <label for="name">氏名：</label>
+        <input type="text" id="name" v-on:keyup.esc="clear" v-model="name">
+      </form>
+    </div>
+
   </div>
 
 </template>
@@ -386,6 +393,9 @@ export default {
     },
     onClickResult() {
       this.result = Math.floor(Math.random() * 100) + 1;
+    },
+    clear() {
+      this.name = '';
     }
   },
   computed: {
