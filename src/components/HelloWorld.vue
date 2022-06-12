@@ -318,6 +318,20 @@
       </form>
     </div>
 
+    <div>
+      <div v-on:click.left="onLeftClick" v-on:click.right.prevent="onRightClick">
+        ボタンの右クリックでコンテキストメニューを表示します。
+      </div>
+      <!--  コンテキストメニューの定義    -->
+      <ul class="cxt" v-bind:style="pos" v-show="show_mouse_btn">
+        <li><a href="">ヘルプ</a></li>
+        <li><a href="">質問掲示板</a></li>
+        <li><a href="">よくある指紋一覧</a></li>
+      </ul>
+
+    </div>
+
+
   </div>
 
 </template>
@@ -371,7 +385,12 @@ export default {
       },
       cl: true,
       isChange: false,
-      result: '-'
+      result: '-',
+      pos: {
+        left: 0,
+        top: 0
+      },
+      show_mouse_btn: false
     }
   },
   methods: {
@@ -406,6 +425,18 @@ export default {
     },
     help() {
       window.alert('氏名（漢字）を入力してください');
+    },
+    onLeftClick() {
+      //左クリックでメニューを非表示
+      this.show_mouse_btn = false;
+    },
+    onRightClick(e) {
+      this.pos = {
+        left: e.pageY + 'px',
+        top: e.pageX + 'px'
+      }
+      //右クリックでメニューを表示
+      this.show_mouse_btn = true;
     }
   },
   computed: {
