@@ -311,6 +311,13 @@
       </form>
     </div>
 
+    <div>
+      <form>
+        <label for="name">氏名：</label>
+        <input type="text" id="name" v-on:keyup.ctrl.q="help" v-model="name">
+      </form>
+    </div>
+
   </div>
 
 </template>
@@ -396,6 +403,9 @@ export default {
     },
     clear() {
       this.name = '';
+    },
+    help() {
+      window.alert('氏名（漢字）を入力してください');
     }
   },
   computed: {
