@@ -329,15 +329,23 @@
         <li><a href="">よくある指紋一覧</a></li>
       </ul>
 
+      <div>
+        <MyCounter init="0"/>
+      </div>
+
+
     </div>
-
-
   </div>
 
 </template>
 
 <script>
+import MyCounter from './MyCounter.vue'
+
 export default {
+  components: {
+    MyCounter
+  },
   name: 'HelloWorld',
   props: {
     msg: String
