@@ -333,6 +333,10 @@
         <MyCounter init="0"/>
       </div>
 
+      <div>
+        <MyHello title="input" my-attr="my-attr" class="sub"></MyHello>
+      </div>
+
 
     </div>
   </div>
@@ -341,10 +345,12 @@
 
 <script>
 import MyCounter from './MyCounter.vue'
+import MyHello from './MyHello.vue'
 
 export default {
   components: {
-    MyCounter
+    MyCounter,
+    MyHello
   },
   name: 'HelloWorld',
   props: {
