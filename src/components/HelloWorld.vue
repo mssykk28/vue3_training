@@ -354,7 +354,20 @@ export default {
   },
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    yourName: {
+      type: String,
+      required: true,
+    },
+    //yourName2プロパティはString/Number型のいずれか
+    yourName2: [String, Number],
+    //既定値を返す関数を渡す
+    details: {
+      type: Object,
+      default() {
+        return {value: "hoge"}
+      }
+    },
   },
   data() {
     return {
