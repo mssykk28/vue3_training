@@ -337,6 +337,13 @@
         <MyHello title="input" my-attr="my-attr" class="sub"></MyHello>
       </div>
 
+      <div>
+        {{ counter }}
+        <MyCounter2 step="1" v-on:plusMinus="onPlus"></MyCounter2>
+        <MyCounter2 step="2" v-on:plusMinus="onPlus"></MyCounter2>
+        <MyCounter2 step="-1" v-on:plusMinus="onPlus"></MyCounter2>
+      </div>
+
 
     </div>
   </div>
@@ -345,11 +352,13 @@
 
 <script>
 import MyCounter from './MyCounter.vue'
+import MyCounter2 from './MyCounter2.vue'
 import MyHello from './MyHello.vue'
 
 export default {
   components: {
     MyCounter,
+    MyCounter2,
     MyHello
   },
   name: 'HelloWorld',
@@ -417,7 +426,8 @@ export default {
         left: 0,
         top: 0
       },
-      show_mouse_btn: false
+      show_mouse_btn: false,
+      counter: 0
     }
   },
   methods: {
@@ -464,7 +474,10 @@ export default {
       }
       //右クリックでメニューを表示
       this.show_mouse_btn = true;
-    }
+    },
+    onPlus(step) {
+      this.counter += step;
+    },
   },
   computed: {
     expensiveBooks() {
