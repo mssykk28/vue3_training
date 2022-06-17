@@ -344,6 +344,10 @@
         <MyCounter2 step="-1" v-on:plusMinus="onPlus"></MyCounter2>
       </div>
 
+      <div>
+        <p>親：{{ parentMessage }}</p>
+        <MyChild ref="child"></MyChild>
+      </div>
 
     </div>
   </div>
@@ -354,12 +358,14 @@
 import MyCounter from './MyCounter.vue'
 import MyCounter2 from './MyCounter2.vue'
 import MyHello from './MyHello.vue'
+import MyChild from './MyChild.vue'
 
 export default {
   components: {
     MyCounter,
     MyCounter2,
-    MyHello
+    MyHello,
+    MyChild
   },
   name: 'HelloWorld',
   props: {
@@ -427,7 +433,8 @@ export default {
         top: 0
       },
       show_mouse_btn: false,
-      counter: 0
+      counter: 0,
+      parentMessage: '',
     }
   },
   methods: {
@@ -479,11 +486,15 @@ export default {
       this.counter += step;
     },
   },
+  //マウント時に子のmessageを設定
+  mounted() {
+    this.$refs.child.childMessage = "親からのメッセージ"
+  },
   computed: {
     expensiveBooks() {
       return this.books.filter(book => book.price >= 3000);
     },
-  }
+  },
 }
 </script>
 
